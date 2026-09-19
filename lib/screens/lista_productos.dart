@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import '../models/producto.dart';
-//import 'detalle_producto.dart';
+import 'detalle_producto.dart';
 
 class ListaProductosScreen extends StatelessWidget {
   const ListaProductosScreen({super.key});
 
-  // Datos quemados (Mock Data) para probar
   final List<Producto> productos = const []; // O inicialízalos en el build
 
   @override
@@ -41,15 +40,15 @@ class ListaProductosScreen extends StatelessWidget {
               title: Text(producto.nombre),
               subtitle: Text('\$${producto.precio}'),
               trailing: const Icon(Icons.arrow_forward_ios),
-              //onTap: () //{
+              onTap: () {
                 // Navegación con Navigator.push y paso de datos por constructor
-                //Navigator.push(
-                  //context,
-                  //MaterialPageRoute(
-                    //builder: (context) => DetalleProductoScreen(producto: producto),
-                  //),
-                //);
-              //},
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetalleProductoScreen(producto: producto),
+                  ),
+                );
+              },
             ),
           );
         },
